@@ -4,25 +4,17 @@
 2024/01.11 
 1230
 Part 1
-Step 1: Download and Install Visual Studio Enterprise Edition
-Made sure Visual Studio Enterprise Edition installed. 
+ Download and install Visual Studio Enterprise Edition. Ensure it's properly installed.
+   
+ Follow the official ASP.NET Core MVC tutorial provided by Microsoft, named "Start with MVC". During installation, make sure to mark the prerequisites needed for ASP.NET Core MVC.
 
-Step 2: Followed the Tutorial
-Refered to the official ASP.NET Core MVC tutorial provided by Microsoft to get started: Start with MVC.
+ Create a new project named "WebApplication1" using .NET 8.0 (Long Term Support), adhering to the tutorial instructions.
 
-Ensure that you mark the prerequisites needed for ASP.NET Core MVC during the installation process.
+ Handle SSL warning: When running the app, a warning popup may appear. Choose "Yes" for the SSL warning and CA warning. If you forget to mark the "Don't ask me again" box, you can handle it manually later.
 
-Step 3: Created a New Project
-Created a new project named "WebApplication1" using .NET 8.0 (Long Term Support). Verified that the instructions provided in the tutorial.
+ Start debugging: Select the "Start Debugging" option. If Microsoft Edge displays unauthorized certificate warnings, consider changing the browser to Firefox or another preferred browser.
 
-Step 4: Handle SSL Warning
-While running the app, a warning popup  appeared. Made sure to select "Yes" for the SSL warning and CA warning. If you forget to mark the "Don't ask me again" box, no worries, you can always handle it manually.
-
-Step 5: Start Debugging
-Selected the "Start Debugging" option. If you encounter issues with Microsoft Edge displaying unauthorized certificate warnings, consider changing the browser to Firefox or another preferred browser.
-
-Step 6: Browser Selection
-Explored the dropdown bar near the debug option to choose your preferred web browser for debugging. This allows you to seamlessly switch between browsers.
+ Browser selection: Utilize the dropdown bar near the debug option to choose your preferred web browser for debugging. This allows seamless switching between browsers.
 
  2024/1/16
  1630
@@ -30,48 +22,55 @@ Explored the dropdown bar near the debug option to choose your preferred web bro
  Part 2 
  * Added controller
  
-  Step 1: Create HelloWorldController
-In Solution Explorer, right-click Controllers > Add > Controller.
-In the Add New Scaffolded Item dialog box, selected MVC Controller - Empty > Add.
-Entered HelloWorldController.cs in the Add New Item - MvcMovie dialog and selected Add.
+ Step 1: Create HelloWorldController
+ Navigate to Solution Explorer.
+Right-click on Controllers and select Add > Controller.
+ In the Add New Scaffolded Item dialog box, choose MVC Controller - Empty and click Add.
+ Enter "HelloWorldController.cs" in the Add New Item dialog and click Add.
 Step 2: Modify HelloWorldController
-Replaced the contents of Controllers/HelloWorldController.cs 
-
+Replace the contents of the newly created HelloWorldController.cs with your desired code logic.
 Step 3: Test the Controller
-Access https://localhost:7299/HelloWorld in  browser to see the default message.
-Tried https://localhost:7299/HelloWorld/Welcome?name=Rick&numtimes=4 to test the personalized greeting.
+- Access "https://localhost:7299/HelloWorld" to view the default message.
+- For personalized greeting, tried "https://localhost:7299/HelloWorld/Welcome?name=Rick&numtimes=4" in the browser.
 
 
-
+Part 3
 2024/1/17 
 2130
 
-Part 3
+Add a view 
+   In the helloworld controller replaced the index method
+   Added a new folder named helloworld
+   Replaced the contents of the Views/HelloWorld/Index.cshtml
+   Navigated to https://localhost:PORT numer/HelloWorld
+   Replaced the content of the Views/Shared/_Layout.cshtml
+   Opened the Views/HelloWorld/Index.cshtml view file and Changed the title and elements.
+   Browser title,Primary heading and Secondary headings has been changed.
+   Replaced the contents of Views/HelloWorld/Welcome.cshtml.
 
-Modifying the HelloWorldController class to use Razor(syntax) view files. 
-This cleanly encapsulates the process of generating HTML responses to a client.
 
-* Current index method  returns a string with a message in the controller class.
-* Replaced the Index method in HelloWorldController.cs with
 
-* calls the controller's View method.
-* return an IActionResult or a class derived from ActionResult
-Completed part 3
 
 Part 4
 2024/1/23 1300
 
-Used the scafolding package to create edit,update and delete.
-In Model folder added class and named file as movie.cs
-Then under Controllers folder Added New Scaffolded Item and selcted movie option under the model class
-To get Migration folder, selected NuGet Package Manager From the Tools menu and gave required command under Package Manager Console 
-Then Run the app and selected the Movie App and modified the data
-Models represent the data and business logic of an application.
+ Utilize the scaffolding package to streamline the creation of edit, update, and delete functionalities within the application.
+ Add a new class named "Movie.cs" under the Model folder to represent the data structure and business logic related to movies.
+ Under the Controllers folder, added a new scaffolded item, selecting the "Movie" option to generate necessary controller actions for managing movie data.
+ Accessed the NuGet Package Manager from the Tools menu and execute required migration commands in the Package Manager Console to incorporate changes into the database schema.
+ Generated a Migration folder containing necessary database migration scripts.
+ Launched the application and selected the Movie App to modify movie data using the provided edit, update, and delete functionalities.
 
 Completed part 4
 
 Part 5
 2024/1/24 1900
+
+work with a database
+     Examined the database by navigating into sql server>Databases>dbo.movie>view data
+     Created a class named seed data in the model folder.
+     Replaced the contents of program.cs file
+
 
 
 
@@ -83,8 +82,6 @@ Part 6
 Controller Methods and Views
     Opened the Models/Movie.cs file and updated it
     Edit, Details, and Delete links are generated by the Core MVC Anchor Tag Helper in the Views/Movies/Index.cshtml file
-
-
 
 
 part 7
